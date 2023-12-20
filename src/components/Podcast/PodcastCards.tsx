@@ -10,20 +10,25 @@ import {
   Box,
   Link,
 } from "@mui/material";
-import { allPodcast as all } from "../../../db/allPodcast";
 import Loading from "../Loading";
 
 interface Props {
   allPodcast: AllPodcasts;
-  hadlePodcast: () => void;
   loading?: boolean;
 }
-export const PodcastCards = ({ allPodcast, hadlePodcast, loading }: Props) => {
-  const podcasts = all[0];
 
+/**
+ * Renders a list of podcast cards.
+ *
+ * @param {Props} allPodcast - The array of podcast data.
+ * @param {() => void} hadlePodcast - The callback function to handle podcast interactions.
+ * @param {boolean} loading - Indicates whether the podcast data is still loading.
+ * @return {JSX.Element} The JSX element representing the rendered podcast cards.
+ */
+export const PodcastCards = ({ allPodcast, loading }: Props) => {
   return (
     <>
-      {podcasts !== undefined ? (
+      {allPodcast !== undefined ? (
         allPodcast.map((podcast) => (
           <Box key={podcast.id?.attributes?.["im:id"]}>
             <Link
@@ -37,9 +42,6 @@ export const PodcastCards = ({ allPodcast, hadlePodcast, loading }: Props) => {
                   boxShadow: 5,
                   maxWidth: 300,
                   maxHeight: 300,
-                }}
-                onClick={() => {
-                  hadlePodcast();
                 }}
               >
                 <CardContent>

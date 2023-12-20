@@ -44,7 +44,13 @@ export const Filter = ({
         />
       </Box>
       <Box component={"span"} mt={3.3} mr={1}>
-      <Chip label={totalPodcasts} color="primary" sx={{ alignContent: "center"}} />
+        {totalPodcasts > 0 ? (
+          <Chip
+            label={totalPodcasts}
+            color="primary"
+            sx={{ alignContent: "center" }}
+          />
+        ) : null}
       </Box>
     </Stack>
   );
