@@ -1,5 +1,5 @@
 import {
-  Podcast,
+  PodcastDetail,
   WrapperType,
   Kind,
   Name,
@@ -8,9 +8,9 @@ import {
   EpisodeFileExtension,
   ClosedCaptioning,
   EpisodeContentType,
-} from "@/interface/podcast";
+} from "@/interface/podcastDetail";
 
-export const data: Podcast = {
+export const podcastDetail: PodcastDetail = {
   resultCount: 21,
   results: [
     {

@@ -1,4 +1,4 @@
-export interface Podcast {
+export interface PodcastDetail {
   resultCount: number;
   results: Result[];
 }
