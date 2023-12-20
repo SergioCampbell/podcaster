@@ -16,6 +16,8 @@ import {
   getSortedRowModel,
 } from "@tanstack/react-table";
 import type { ColumnDef, SortingState } from "@tanstack/react-table";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 import { useState } from "react";
 
 interface ReactTableProps<T extends object> {
@@ -25,11 +27,24 @@ interface ReactTableProps<T extends object> {
 export const PodcastTable = <T extends object>({
   data,
 }: ReactTableProps<T>) => {
+  const { podcastId } = useParams();
+
   const columns: ColumnDef<Result>[] = [
     {
       header: TABLE_HEADER.Title,
-      cell: (row) => row.renderValue(),
       accessorKey: "trackName",
+      cell: ({ row }) => {
+        const episodeId = row.original.trackId;
+        return (
+          <Link
+            href={`/podcast/${podcastId}/episode/${episodeId}`}
+            style={{ textDecoration: "none" }}
+          >
+            {/* <Link href={`/episode/${episodeId}`} style={{ textDecoration: "none" }}> */}
+            {row.original.trackName}
+          </Link>
+        );
+      },
     },
     {
       header: TABLE_HEADER.Date,
