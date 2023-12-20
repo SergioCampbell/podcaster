@@ -2,6 +2,14 @@
 import { Result } from "@/interface/podcastDetail";
 import { TABLE_HEADER } from "@/libs/constans";
 import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
+import {
   getCoreRowModel,
   useReactTable,
   flexRender,
@@ -57,55 +65,52 @@ export const PodcastTable = <T extends object>({
   });
 
   return (
-    <div className="flex flex-col">
-      <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-        <div className="inline-block min-w-full py-4 sm:px-6 lg:px-8">
-          <div className="overflow-hidden p-2">
-            <table className="min-w-full text-center">
-              <thead className="border-b bg-gray-50">
-                {table.getHeaderGroups().map((headerGroup) => (
-                  <tr key={headerGroup.id}>
-                    {headerGroup.headers.map((header) => (
-                      <th
-                        key={header.id}
-                        className="px-6 py-4 text-sm font-medium text-gray-900"
-                      >
-                        {header.isPlaceholder
-                          ? null
-                          : flexRender(
-                              header.column.columnDef.header,
-                              header.getContext()
-                            )}
-                        {{
-                          asc: "▲",
-                          desc: "▼",
-                        }[header.column.getIsSorted() as string] ?? ""}
-                      </th>
-                    ))}
-                  </tr>
-                ))}
-              </thead>
-              <tbody>
-                {table.getRowModel().rows.map((row) => (
-                  <tr key={row.id} className='border-b" bg-white'>
-                    {row.getVisibleCells().map((cell) => (
-                      <td
-                        className="whitespace-nowrap px-6 py-4 text-sm font-light text-gray-900"
-                        key={cell.id}
-                      >
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext()
-                        )}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
+    <TableContainer>
+      <Table>
+        <TableHead sx={{ cursor: "pointer" }}>
+          {table.getHeaderGroups().map((headerGroup) => (
+            <TableRow key={headerGroup.id}>
+              {headerGroup.headers.map((header) => (
+                <TableCell
+                  sx={{ fontWeight: "bold", fontSize: "1.2rem" }}
+                  component="th"
+                  scope="row"
+                  key={header.id}
+                  colSpan={header.colSpan}
+                >
+                  {header.isPlaceholder ? null : (
+                    <div
+                      {...{
+                        onClick: header.column.getToggleSortingHandler(),
+                      }}
+                    >
+                      {flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
+                      {{
+                        asc: " 🔼",
+                        desc: " 🔽",
+                      }[header.column.getIsSorted() as string] ?? null}
+                    </div>
+                  )}
+                </TableCell>
+              ))}
+            </TableRow>
+          ))}
+        </TableHead>
+        <TableBody>
+          {table.getRowModel().rows.map((row) => (
+            <TableRow key={row.id}>
+              {row.getVisibleCells().map((cell) => (
+                <TableCell component="td" scope="row" key={cell.id}>
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </TableCell>
+              ))}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 };

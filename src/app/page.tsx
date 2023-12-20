@@ -18,6 +18,8 @@ export default function Home() {
     setPodcasts(data.feed.entry);
   };
 
+  const one = podcasts?.id?.attributes?.["im:id"];
+
   // console.log("🚀 ~ file: page.tsx:12 ~ Home ~ podcasts:", podcasts);
   useEffect(() => {
     fetchPodcasts();
@@ -31,7 +33,7 @@ export default function Home() {
       <Button variant="contained">
         <Link
           style={{ color: "white", textDecoration: "none" }}
-          href={`/podcast/${randomId}`}
+          href={`/podcast/${one}`}
         >
           Open all Podcast
         </Link>
