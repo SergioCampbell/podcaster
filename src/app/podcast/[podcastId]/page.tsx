@@ -1,7 +1,7 @@
 "use client";
 import { Sidebar } from "@/components/Sidebar";
 import { useParams } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { podcastDetail } from "../../../../db/data";
 import { Navbar } from "@/components/navbar";
 import { PodcastTable } from "@/components/Podcast/PodcastTable";
@@ -11,10 +11,11 @@ const PodcastPage = () => {
   //TODO: get the podcast id from the url
   const { podcastId } = useParams();
   const { results, resultCount } = podcastDetail;
+  const [isLoading, setIsloading] = useState(false);
 
   return (
     <div>
-      <Navbar />
+      <Navbar isloading={isLoading} />
       <Stack direction="row">
         <Sidebar resultCount={0} results={results} />
         <Box flex={1}>

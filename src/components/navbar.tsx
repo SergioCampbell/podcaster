@@ -3,25 +3,27 @@ import Loading from "@/components/Loading";
 import { Box, AppBar, Toolbar, Typography } from "@mui/material";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 
-export const Navbar = () => {
-  const [isLoading, setIsLoading] = useState(false);
+interface NavbarProps {
+  isloading: boolean;
+}
+export const Navbar = ({ isloading }: NavbarProps) => {
   const pathname = usePathname();
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar component={"nav"} position="static">
+      <AppBar color="inherit" component={"nav"} position="static">
         <Toolbar>
           <Typography
-            variant="h6"
-            component="div"
+            variant="h4"
+            fontWeight={"bold"}
+            component="text"
+            color={"primary"}
             sx={{ flexGrow: 1 }}
-            onClick={() => setIsLoading(!isLoading)}
           >
             Podcaster
           </Typography>
-          {isLoading ? <Loading /> : null}
+          {isloading ? <Loading /> : null}
           <Link hidden={pathname === "/"} href="/">
             home
           </Link>

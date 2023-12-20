@@ -1,8 +1,8 @@
 'use client'
-const Loading = () => {
+const loading = () => {
   return (
     <span className="loader"></span>
   )
 }
 
-export default Loading
+export default loading

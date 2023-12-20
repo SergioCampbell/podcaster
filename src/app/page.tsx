@@ -1,37 +1,48 @@
 "use client";
 
 import Loading from "@/components/Loading";
+import { Filter } from "@/components/Podcast/Filter";
 import { PodcastCards } from "@/components/Podcast/PodcastCards";
 import { Navbar } from "@/components/navbar";
 import { AllPodcasts } from "@/interface/podcasts";
-import { Button, Container, Stack } from "@mui/material";
-import Link from "next/link";
+import { Container, Stack, Typography } from "@mui/material";
 import { Suspense, useEffect, useState } from "react";
 
 export default function Home() {
   const [podcasts, setPodcasts] = useState<AllPodcasts>();
+  const [totalPodcasts, setTotalPodcasts] = useState(0);
+  const [isLoading, setIsloading] = useState(false);
+  const [searchQueary, setSearchQueary] = useState<string>("");
 
   const fetchPodcasts = async () => {
     const res = await fetch(
-      "https://itunes.apple.com/us/rss/toppodcasts/limit=10/json"
+      "https://itunes.apple.com/us/rss/toppodcasts/limit=6/json"
     );
     const data = await res.json();
+    console.log("🚀 ~ file: page.tsx:21 ~ fetchPodcasts ~ data:", data);
     setPodcasts(data.feed.entry);
+    setTotalPodcasts(data.feed.entry.length);
+    setIsloading(!data);
   };
 
-  const one = 1;
+  const handlePodcast = () => {
+    setIsloading(true);
+  };
 
-  // console.log("🚀 ~ file: page.tsx:12 ~ Home ~ podcasts:", podcasts?.map((item) => {
-  //   return item?.id?.attributes?.["im:id"]
-  // }));
   useEffect(() => {
     fetchPodcasts();
   }, []);
 
   return (
     <main>
-      <Navbar />
-      <input placeholder="Filter Podcast..." />
+      <Navbar isloading={isLoading} />
+      <Suspense fallback={<Loading />}>
+        <Filter
+          totalPodcasts={totalPodcasts}
+          searchQueary={searchQueary}
+          setSearchQueary={setSearchQueary}
+        />
+      </Suspense>
       <Suspense fallback={<Loading />}>
         <Container maxWidth="xl" sx={{ mt: 5 }}>
           <Stack
@@ -40,16 +51,16 @@ export default function Home() {
             flexWrap={"wrap"}
             justifyContent={"space-evenly"}
           >
-            <PodcastCards />
+            {podcasts !== undefined && podcasts?.length > 0 ? (
+              <PodcastCards
+                allPodcast={podcasts}
+                hadlePodcast={handlePodcast}
+                loading={isLoading}
+              />
+            ) : (
+              <Typography variant="h4">No Podcast Found</Typography>
+            )}
           </Stack>
-          {/* <Button variant="contained">
-        <Link
-          style={{ color: "white", textDecoration: "none" }}
-          href={`/podcast/${one}`}
-        >
-          Open all Podcast
-        </Link>
-      </Button> */}
         </Container>
       </Suspense>
     </main>

@@ -20,6 +20,7 @@ export const Sidebar = ({ results }: PodcastDetail) => {
         height={200}
         src={podcast.artworkUrl600}
         alt={podcast.collectionName}
+        priority={false}
       />
       <Stack alignContent={"start"} justifyContent={"start"}>
         <Divider
