@@ -11,6 +11,36 @@
   box-shadow: 5;
 }
 
+/*SIDEBAR COMPONENT*/
+.multiline-ellipsis {
+  display: -webkit-box;
+  max-width: 300px;
+  -webkit-line-clamp: 50;
+  -webkit-box-orient: vertical;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.multiline-ellipsis::-webkit-scrollbar {
+  width: 12px;
+}
+
+.multiline-ellipsis::-webkit-scrollbar-thumb {
+  background-color: #1976d2;
+}
+
+.multiline-ellipsis::-webkit-scrollbar-track {
+  background: rgba(255, 166, 0, 0);
+}
+
+
+.sidebar-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
 /* LOADER */
 .loader {
   --s: 25px;

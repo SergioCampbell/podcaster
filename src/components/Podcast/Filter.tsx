@@ -30,7 +30,7 @@ export const Filter = ({
       maxWidth={myWidth < 400 ? 100 : "94.5%"}
       sx={{ mt: 3 }}
     >
-      <Box component="form" mt={3}>
+      <Box component="form" name="searchPodcast" mt={3}>
         <TextField
           name="search"
           id="outlined-basic"

@@ -17,11 +17,12 @@ export const Navbar = ({ isloading }: NavbarProps) => {
           <Typography
             variant="h4"
             fontWeight={"bold"}
-            component="text"
             color={"primary"}
             sx={{ flexGrow: 1 }}
           >
-            Podcaster
+            <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
+              Podcaster
+            </Link>
           </Typography>
           {isloading ? <Loading /> : null}
           <Link hidden={pathname === "/"} href="/">

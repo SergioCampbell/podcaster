@@ -37,10 +37,10 @@ export const PodcastTable = <T extends object>({
         const episodeId = row.original.trackId;
         return (
           <Link
-            href={`/podcast/${podcastId}/episode/${episodeId}`}
+            href="/podcast/[podcastId]/episode/[episodeId]"
+            as={`/podcast/${podcastId}/episode/${episodeId}`}
             style={{ textDecoration: "none" }}
           >
-            {/* <Link href={`/episode/${episodeId}`} style={{ textDecoration: "none" }}> */}
             {row.original.trackName}
           </Link>
         );

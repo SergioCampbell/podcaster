@@ -3,4 +3,3 @@ export enum TABLE_HEADER {
   Date = "Date",
   Duration = "Duration",
 }
-
