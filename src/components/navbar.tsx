@@ -2,17 +2,19 @@
 import Loading from "@/components/Loading";
 import { Box, AppBar, Toolbar, Typography } from "@mui/material";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 interface NavbarProps {
   isloading: boolean;
 }
 export const Navbar = ({ isloading }: NavbarProps) => {
-  const pathname = usePathname();
-
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar color="inherit" component={"nav"} position="static">
+      <AppBar
+        color="inherit"
+        component={"nav"}
+        data-testid="navbar"
+        position="static"
+      >
         <Toolbar>
           <Typography
             variant="h4"

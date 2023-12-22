@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { PodcastDetail, Result } from "@/interface/podcastDetail";
 import { AllPodcasts, Podcasts } from "@/interface/podcasts";
 import { routes } from "@/libs/apiUrl";

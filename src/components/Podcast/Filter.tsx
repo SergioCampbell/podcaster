@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 "use client";
 
 import { Box, Chip, Stack, TextField } from "@mui/material";
@@ -35,8 +33,9 @@ export const Filter = ({
     >
       <Box component="form" name="searchPodcast" mt={3}>
         <TextField
-          name="search"
-          id="outlined-basic"
+          name="search-podcast"
+          id="filter-podcast"
+          data-testid="search-podcast"
           label=""
           variant="outlined"
           placeholder="Filter Podcasts..."

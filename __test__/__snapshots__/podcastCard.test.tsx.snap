@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render the PodcastCard Should display the artist name 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-0"
+  >
+    <a
+      href="/podcast/1718562878"
+      style="color: white; text-decoration: none;"
+    >
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1vo4off-MuiPaper-root-MuiCard-root"
+        data-testid="podcast-artist"
+      >
+        <div
+          class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+        >
+          <div
+            class="MuiAvatar-root MuiAvatar-circular css-9pp4f2-MuiAvatar-root"
+          >
+            <img
+              alt="Mortal Sin - NBC News"
+              class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+              src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/73/e4/8e/73e48e46-2812-f78f-e571-454e85b59be7/mza_4549916304669920567.jpg/170x170bb.png"
+            />
+          </div>
+          <h5
+            aria-label="Mortal Sin - NBC News"
+            class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-1q4wj9t-MuiTypography-root"
+            data-mui-internal-clone-element="true"
+          >
+            Mortal Sin - NBC News
+          </h5>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-17eqfq4-MuiTypography-root"
+          >
+            NBC News
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div
+    class="MuiBox-root css-0"
+  >
+    <a
+      href="/podcast/1538165808"
+      style="color: white; text-decoration: none;"
+    >
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1vo4off-MuiPaper-root-MuiCard-root"
+        data-testid="podcast-artist"
+      >
+        <div
+          class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+        >
+          <div
+            class="MuiAvatar-root MuiAvatar-circular css-9pp4f2-MuiAvatar-root"
+          >
+            <img
+              alt="Who shat on the floor at my wedding? - Who shat on the floor at my wedding?"
+              class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+              src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/d1/f4/ae/d1f4ae64-32af-d8a5-9531-07bd8bef2a05/mza_3539549108746744251.jpeg/170x170bb.png"
+            />
+          </div>
+          <h5
+            aria-label="Who shat on the floor at my wedding? - Who shat on the floor at my wedding?"
+            class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-1q4wj9t-MuiTypography-root"
+            data-mui-internal-clone-element="true"
+          >
+            Who shat on the floor at my wedding? - Who shat on the floor at my wedding?
+          </h5>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-17eqfq4-MuiTypography-root"
+          >
+            Who shat on the floor at my wedding?
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div
+    class="MuiBox-root css-0"
+  >
+    <a
+      href="/podcast/1719795462"
+      style="color: white; text-decoration: none;"
+    >
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1vo4off-MuiPaper-root-MuiCard-root"
+        data-testid="podcast-artist"
+      >
+        <div
+          class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+        >
+          <div
+            class="MuiAvatar-root MuiAvatar-circular css-9pp4f2-MuiAvatar-root"
+          >
+            <img
+              alt="On Musk with Walter Isaacson - iHeartPodcasts and Kaleidoscope"
+              class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+              src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/e2/30/9c/e2309c86-d54f-1c85-2121-67c7104441df/mza_3219819313662797266.jpg/170x170bb.png"
+            />
+          </div>
+          <h5
+            aria-label="On Musk with Walter Isaacson - iHeartPodcasts and Kaleidoscope"
+            class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-1q4wj9t-MuiTypography-root"
+            data-mui-internal-clone-element="true"
+          >
+            On Musk with Walter Isaacson - iHeartPodcasts and Kaleidoscope
+          </h5>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-17eqfq4-MuiTypography-root"
+          >
+            iHeartPodcasts and Kaleidoscope
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div
+    class="MuiBox-root css-0"
+  >
+    <a
+      href="/podcast/1200361736"
+      style="color: white; text-decoration: none;"
+    >
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1vo4off-MuiPaper-root-MuiCard-root"
+        data-testid="podcast-artist"
+      >
+        <div
+          class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+        >
+          <div
+            class="MuiAvatar-root MuiAvatar-circular css-9pp4f2-MuiAvatar-root"
+          >
+            <img
+              alt="The Daily - The New York Times"
+              class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+              src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/1c/ac/04/1cac0421-4483-ff09-4f80-19710d9feda4/mza_12421371692158516891.jpeg/170x170bb.png"
+            />
+          </div>
+          <h5
+            aria-label="The Daily - The New York Times"
+            class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-1q4wj9t-MuiTypography-root"
+            data-mui-internal-clone-element="true"
+          >
+            The Daily - The New York Times
+          </h5>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-17eqfq4-MuiTypography-root"
+          >
+            The New York Times
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div
+    class="MuiBox-root css-0"
+  >
+    <a
+      href="/podcast/77001367"
+      style="color: white; text-decoration: none;"
+    >
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1vo4off-MuiPaper-root-MuiCard-root"
+        data-testid="podcast-artist"
+      >
+        <div
+          class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+        >
+          <div
+            class="MuiAvatar-root MuiAvatar-circular css-9pp4f2-MuiAvatar-root"
+          >
+            <img
+              alt="The Ramsey Show - Ramsey Network"
+              class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+              src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/2a/db/c7/2adbc7d6-dcde-d8ae-481e-7f4826abf37a/mza_12577097097957624675.jpg/170x170bb.png"
+            />
+          </div>
+          <h5
+            aria-label="The Ramsey Show - Ramsey Network"
+            class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-1q4wj9t-MuiTypography-root"
+            data-mui-internal-clone-element="true"
+          >
+            The Ramsey Show - Ramsey Network
+          </h5>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-17eqfq4-MuiTypography-root"
+          >
+            Ramsey Network
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div
+    class="MuiBox-root css-0"
+  >
+    <a
+      href="/podcast/1322200189"
+      style="color: white; text-decoration: none;"
+    >
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1vo4off-MuiPaper-root-MuiCard-root"
+        data-testid="podcast-artist"
+      >
+        <div
+          class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+        >
+          <div
+            class="MuiAvatar-root MuiAvatar-circular css-9pp4f2-MuiAvatar-root"
+          >
+            <img
+              alt="Crime Junkie - audiochuck"
+              class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+              src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/8c/35/04/8c350430-2fbf-98d0-0a25-00b76550ffeb/mza_13445204151221888086.jpg/170x170bb.png"
+            />
+          </div>
+          <h5
+            aria-label="Crime Junkie - audiochuck"
+            class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-1q4wj9t-MuiTypography-root"
+            data-mui-internal-clone-element="true"
+          >
+            Crime Junkie - audiochuck
+          </h5>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-17eqfq4-MuiTypography-root"
+          >
+            audiochuck
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+</DocumentFragment>
+`;

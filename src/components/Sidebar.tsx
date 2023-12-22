@@ -15,7 +15,6 @@ interface SidebarProps {
  * @return {JSX.Element} The rendered sidebar component.
  */
 export const Sidebar = ({ podcast }: SidebarProps) => {
-  ReactDOM.preload("https://placehold.co/400/png", { as: "image" });
   return (
     <Stack
       maxHeight={"90vh"}
@@ -46,7 +45,7 @@ export const Sidebar = ({ podcast }: SidebarProps) => {
             sx={{ width: "auto", marginTop: 2, marginBottom: 2 }}
           />
           <strong>{podcast?.title?.label ?? "No Name"}</strong>
-          <Typography fontStyle={"italic"}>
+          <Typography fontStyle={"italic"} data-testid="podcast-artist">
             By {podcast?.["im:artist"]?.label ?? "No Name"}
           </Typography>
         </Stack>

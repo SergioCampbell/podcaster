@@ -4,7 +4,6 @@ import "./globals.css";
 import { Providers } from "./Providers";
 import { ReactNode } from "react";
 
-// eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

@@ -6,7 +6,6 @@ import { usePodcast } from "@/hooks";
 import { AllPodcasts, Podcasts } from "@/interface/podcasts";
 import { Container, Stack, Typography } from "@mui/material";
 import { Suspense, useEffect, useState } from "react";
-import ErrorBoundary from "./ErrorBoundary";
 
 export const HomePage = () => {
   const { data, isFetching, isLoading } = usePodcast(100);
@@ -38,38 +37,36 @@ export const HomePage = () => {
   }, [data, searchQueary]);
   return (
     <main>
-      <ErrorBoundary>
-        <Navbar isloading={isLoading} />
-        <Suspense fallback={<Loading />}>
-          <Filter
-            totalPodcasts={totalPodcasts}
-            searchQueary={searchQueary}
-            setSearchQueary={setSearchQueary}
-          />
-        </Suspense>
-        <Suspense fallback={<Loading />}>
-          <Container maxWidth="xl" sx={{ mt: 5 }}>
-            <Stack
-              direction="row"
-              alignItems={"stretch"}
-              flexWrap={"wrap"}
-              justifyContent={"space-evenly"}
-            >
-              {dataFiltered !== undefined && dataFiltered?.length > 0 ? (
-                <PodcastCards allPodcast={dataFiltered} loading={isLoading} />
-              ) : (
-                <Stack alignItems={"center"}>
-                  {isFetching ? (
-                    <Loading />
-                  ) : (
-                    <Typography variant="h4">No Podcast Found</Typography>
-                  )}
-                </Stack>
-              )}
-            </Stack>
-          </Container>
-        </Suspense>
-      </ErrorBoundary>
+      <Navbar isloading={isLoading} />
+      <Suspense fallback={<Loading />}>
+        <Filter
+          totalPodcasts={totalPodcasts}
+          searchQueary={searchQueary}
+          setSearchQueary={setSearchQueary}
+        />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <Container maxWidth="xl" sx={{ mt: 5 }}>
+          <Stack
+            direction="row"
+            alignItems={"stretch"}
+            flexWrap={"wrap"}
+            justifyContent={"space-evenly"}
+          >
+            {dataFiltered !== undefined && dataFiltered?.length > 0 ? (
+              <PodcastCards allPodcast={dataFiltered} loading={isLoading} />
+            ) : (
+              <Stack alignItems={"center"}>
+                {isFetching ? (
+                  <Loading />
+                ) : (
+                  <Typography variant="h4">No Podcast Found</Typography>
+                )}
+              </Stack>
+            )}
+          </Stack>
+        </Container>
+      </Suspense>
     </main>
   );
 };

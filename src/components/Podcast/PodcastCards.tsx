@@ -33,6 +33,7 @@ export const PodcastCards = ({ allPodcast, loading }: Props) => {
             as={`/podcast/${podcast.id?.attributes?.["im:id"]}`}
           >
             <Card
+              data-testid="podcast-artist"
               sx={{
                 marginTop: 3,
                 marginBottom: 2,
