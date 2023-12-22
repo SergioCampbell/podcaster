@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Podcaster
 
-## Getting Started
+Podcaster is a web application where you can search for the top 100 iTunes podcast artists and
+hear their content.
 
-First, run the development server:
+Navigate filtering by podcast title or artist name, select the card and check it content.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Architecture
+
+This project uses a layered architecture, you would have separate layers for presentation (UI components), business logic (services and hooks), and data access (API calls and database operations).
+
+## Tools and Technologies
+
+List the tools and technologies used in your project:
+
+- TypeScript
+- Nextjs (14)
+- React
+- React-query
+- React-table
+- Jest
+- linkify-react
+- Eslint
+
+## Project Structure
+
+Overview of the project structure:
+
+```
+└── 📁podcast
+    └── .eslintrc.json
+    └── 📁.swc
+        └── 📁plugins
+            ├── v7_windows_x86_64_0.104.30
+    └── 📁db
+        └── allPodcast.ts
+        └── data.ts
+    └── jest.config.ts
+    └── jest.setup.ts
+    └── next-env.d.ts
+    └── next.config.js
+    └── package-lock.json
+    └── package.json
+    └── 📁public
+        └── next.svg
+        └── vercel.svg
+    └── README.md
+    └── 📁src
+        └── 📁app
+            └── favicon.ico
+            └── globals.css
+            └── HomePage.tsx
+            └── page.module.css
+            └── page.tsx
+            └── 📁podcast
+                └── 📁[podcastId]
+                    └── 📁episode
+                        └── 📁[episodeId]
+                            └── page.tsx
+                    └── page.tsx
+            └── Providers.tsx
+        └── 📁components
+            └── ErrorComponent.tsx
+            └── Loading.tsx
+            └── navbar.tsx
+            └── 📁Podcast
+                └── DummyData.ts
+                └── Filter.tsx
+                └── PodcastCards.tsx
+                └── PodcastTable.tsx
+            └── Sidebar.tsx
+        └── 📁hooks
+            └── index.ts
+            └── 📁useQuery
+                └── usePodcast.ts
+                └── useQueryconfig.ts
+        └── 📁interface
+            └── podcastDetail.ts
+            └── podcasts.ts
+        └── 📁libs
+            └── apiUrl.ts
+            └── constans.ts
+            └── defaultValues.ts
+        └── 📁services
+            └── serviceFetcher.ts
+    └── tsconfig.json
+    └── 📁__test__
+        └── filter.test.tsx
+        └── navbar.test.tsx
+        └── podcast.test.tsx
+        └── podcastCard.test.tsx
+        └── sidebar.test.tsx
+        └── 📁__snapshots__
+            └── podcastCard.test.tsx.snap
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Clone the project
+- execute ```npm install``` or ```yarn```
+- Run ```npm run dev``` or ```yarn dev```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Usage
 
-## Learn More
+Once in "dev mode" open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To edit some values and add "dynamicity" go to the this path:
 
-To learn more about Next.js, take a look at the following resources:
+```
+└── HomePage.tsx
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+and in the
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+usePodcast hook
 
-## Deploy on Vercel
+ ````
+   const { data, isFetching, isLoading } = usePodcast(100); // this number is variable
+````
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Testing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project uses [Jest](https://jestjs.io) and to run the test just excecute the follow script:
+
+- ```npm run test``` or ```yarn test```
+
+## License
+
+MIT
