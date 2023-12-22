@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { AllPodcasts, Podcasts } from "@/interface/podcasts";
+import { AllPodcasts } from "@/interface/podcasts";
 import {
   Card,
   CardContent,
@@ -15,7 +15,6 @@ interface Props {
   allPodcast: AllPodcasts;
   loading?: boolean;
 }
-
 /**
  * Renders a list of podcast cards.
  *

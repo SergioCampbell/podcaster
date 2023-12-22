@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 "use client";
+
 import { Result } from "@/interface/podcastDetail";
 import { TABLE_HEADER } from "@/libs/constans";
 import {

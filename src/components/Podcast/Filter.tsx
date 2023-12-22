@@ -1,4 +1,7 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 "use client";
+
 import { Box, Chip, Stack, TextField } from "@mui/material";
 import { useState, useEffect, ChangeEvent } from "react";
 

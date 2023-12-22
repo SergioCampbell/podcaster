@@ -13,6 +13,12 @@ interface PropParams {
   episodeId: string;
 }
 
+/**
+ * Returns a query for podcast data based on the specified limit.
+ *
+ * @param {number} limit - The maximum number of podcast records to retrieve.
+ * @return {unknown} - The result of the query for podcast data.
+ */
 const usePodcast = (limit: number) => {
   return useQuery({
     queryKey: ["podcasts", limit],
@@ -22,6 +28,12 @@ const usePodcast = (limit: number) => {
   });
 };
 
+/**
+ * Custom hook for retrieving podcast details based on the provided podcast ID.
+ *
+ * @param {string} podcastId - The ID of the podcast to retrieve details for.
+ * @return {unknown} The result of the useQuery hook, which retrieves the podcast details.
+ */
 const usePodcastDetail = (podcastId: string) => {
   return useQuery({
     queryKey: ["podcastDetail", podcastId],
@@ -30,6 +42,12 @@ const usePodcastDetail = (podcastId: string) => {
   });
 };
 
+/**
+ * Custom hook that fetches the details of a podcast.
+ *
+ * @param {string} podcastId - The ID of the podcast.
+ * @return {Object} - The result of the query, containing the podcast details.
+ */
 const usePodcastForSidebar = (podcastId: string) => {
   return useQuery({
     queryKey: ["podcastForSidebar", podcastId],
@@ -37,6 +55,13 @@ const usePodcastForSidebar = (podcastId: string) => {
   });
 };
 
+/**
+ * Custom hook for fetching podcast media based on the provided parameters.
+ *
+ * @param {PropParams} params - The parameters for fetching podcast media.
+ * The `podcastId` and `episodeId` properties are required.
+ * @return {QueryResult} - The result of the query for podcast media.
+ */
 const usePodcastMedia = (params: PropParams) => {
   return useQuery({
     queryKey: [`podcastMedia-${params.podcastId}`, params.episodeId],

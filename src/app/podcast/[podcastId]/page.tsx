@@ -21,9 +21,11 @@ const PodcastPage = () => {
   const [totalCount, setTotalCount] = useState<number>(0);
 
   useEffect(() => {
-    if (data?.results === undefined) return;
-    setPodcastTable(data?.results);
-    setTotalCount(data?.resultCount);
+    if (data === undefined) return;
+    if (data && "resultCount" in data) {
+      setTotalCount(data?.resultCount);
+      setPodcastTable(data?.results);
+    }
   }, [data, totalCount]);
 
   return (

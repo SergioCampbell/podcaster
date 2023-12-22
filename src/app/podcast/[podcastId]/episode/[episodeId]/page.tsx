@@ -5,7 +5,7 @@ import { Result } from "@/interface/podcastDetail";
 import { DEFAULT_VALUES } from "@/libs/defaultValues";
 import { Typography, Box } from "@mui/material";
 import { useParams } from "next/navigation";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Linkify from "linkify-react";
 
 const Episodepage = () => {
