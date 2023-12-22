@@ -1,3 +1,5 @@
+![preview](https://i.ibb.co/W2svNhV/podcaster.png)
+
 # Podcaster
 
 Podcaster is a web application where you can search for the top 100 iTunes podcast artists and
