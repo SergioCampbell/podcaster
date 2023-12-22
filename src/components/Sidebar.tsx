@@ -1,6 +1,8 @@
 import { Podcasts } from "@/interface/podcasts";
 import { Divider, Stack, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
+import ReactDOM from "react-dom";
 
 interface SidebarProps {
   podcast?: Podcasts;
@@ -13,6 +15,7 @@ interface SidebarProps {
  * @return {JSX.Element} The rendered sidebar component.
  */
 export const Sidebar = ({ podcast }: SidebarProps) => {
+  ReactDOM.preload("https://placehold.co/400/png", { as: "image" });
   return (
     <Stack
       maxHeight={"90vh"}
@@ -24,24 +27,30 @@ export const Sidebar = ({ podcast }: SidebarProps) => {
       alignContent={"center"}
       justifyContent={"center"}
     >
-      <Image
-        style={{ display: "block", margin: "auto" }}
-        width={200}
-        height={200}
-        src={podcast?.["im:image"]?.[2]?.label ?? ""}
-        alt={podcast?.title?.label ?? "No Name"}
-        priority={false}
-      />
-      <Stack alignContent={"start"} justifyContent={"start"}>
-        <Divider
-          color="grey"
-          sx={{ width: "auto", marginTop: 2, marginBottom: 2 }}
+      <Link
+        style={{ color: "inherit", textDecoration: "none" }}
+        href="/podcast/[podcastid]"
+        as={`/podcast/${podcast?.id?.attributes?.["im:id"]}`}
+      >
+        <Image
+          style={{ display: "block", margin: "auto" }}
+          width={200}
+          height={200}
+          src={podcast?.["im:image"]?.[2]?.label ?? ""}
+          alt={podcast?.title?.label ?? "No Name"}
+          priority
         />
-        <strong>{podcast?.title?.label ?? "No Name"}</strong>
-        <Typography fontStyle={"italic"}>
-          By {podcast?.["im:artist"]?.label ?? "No Name"}
-        </Typography>
-      </Stack>
+        <Stack alignContent={"start"} justifyContent={"start"}>
+          <Divider
+            color="grey"
+            sx={{ width: "auto", marginTop: 2, marginBottom: 2 }}
+          />
+          <strong>{podcast?.title?.label ?? "No Name"}</strong>
+          <Typography fontStyle={"italic"}>
+            By {podcast?.["im:artist"]?.label ?? "No Name"}
+          </Typography>
+        </Stack>
+      </Link>
       <Divider
         color="grey"
         sx={{ idth: "auto", marginTop: 2, marginBottom: 2 }}

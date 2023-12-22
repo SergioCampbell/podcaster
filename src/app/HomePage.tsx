@@ -8,7 +8,7 @@ import { Container, Stack, Typography } from "@mui/material";
 import { Suspense, useEffect, useState } from "react";
 
 export const HomePage = () => {
-  const { data, isFetching, isLoading: loading } = usePodcast(6);
+  const { data, isFetching, isLoading: loading } = usePodcast(100);
   const [podcasts, setPodcasts] = useState<AllPodcasts>([]);
   const [totalPodcasts, setTotalPodcasts] = useState(0);
   const [isLoading, setIsloading] = useState(loading);

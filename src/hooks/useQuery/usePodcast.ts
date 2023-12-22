@@ -1,22 +1,17 @@
 "use client";
-import { AllPodcasts, Podcasts } from "@/interface/podcasts";
-import { routes } from "@/libs/apiUrl";
+
+import {
+  fetchPodcasts,
+  fetchPodcastDetail,
+  fetchPodcastsSidebar,
+  fetchPodcastMedia,
+} from "@/services/serviceFetcher";
 import { useQuery } from "@tanstack/react-query";
 
-const fetchPodcasts = async (limit: number) => {
-  try {
-    const res = await fetch(routes.getPodcasts(limit));
-    if (!res.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const data = await res.json();
-    const results: AllPodcasts = data.feed.entry;
-    return results;
-  } catch (error) {
-    console.error("Error fetching podcasts:", error);
-    return [];
-  }
-};
+interface PropParams {
+  podcastId: string;
+  episodeId: string;
+}
 
 const usePodcast = (limit: number) => {
   return useQuery({
@@ -27,43 +22,12 @@ const usePodcast = (limit: number) => {
   });
 };
 
-const fetchPodcastDetail = async (podcastId: string) => {
-  try {
-    const res = await fetch(routes.getPodcastDetail(podcastId));
-    const data = await res.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching podcast detail:", error);
-    return [];
-  }
-};
-
 const usePodcastDetail = (podcastId: string) => {
   return useQuery({
     queryKey: ["podcastDetail", podcastId],
     queryFn: () => fetchPodcastDetail(podcastId),
     enabled: podcastId.length > 0,
   });
-};
-
-const fetchPodcastsSidebar = async (podcastId: string) => {
-  try {
-    const res = await fetch(routes.getPodcasts(100));
-    if (!res.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const data = await res.json();
-    const result: Podcasts[] = data.feed.entry;
-    let algo: Podcasts = {};
-    for (algo of result) {
-      if (algo?.id?.attributes?.["im:id"] === podcastId) {
-        return algo;
-      }
-    }
-  } catch (error) {
-    console.error("🚨 Error fetching podcasts:", error);
-    return [];
-  }
 };
 
 const usePodcastForSidebar = (podcastId: string) => {
@@ -73,10 +37,13 @@ const usePodcastForSidebar = (podcastId: string) => {
   });
 };
 
-export {
-  usePodcast,
-  fetchPodcasts,
-  fetchPodcastDetail,
-  usePodcastDetail,
-  usePodcastForSidebar,
+const usePodcastMedia = (params: PropParams) => {
+  return useQuery({
+    queryKey: [`podcastMedia-${params.podcastId}`, params.episodeId],
+    queryFn: () => fetchPodcastMedia(params),
+    enabled: Boolean(params),
+    refetchOnMount: true,
+  });
 };
+
+export { usePodcast, usePodcastDetail, usePodcastForSidebar, usePodcastMedia };

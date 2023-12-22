@@ -4,16 +4,16 @@ export interface PodcastDetail {
 }
 
 export interface Result {
-  wrapperType: WrapperType;
-  kind: Kind;
+  wrapperType: string;
+  kind: string;
   artistId?: number;
   collectionId: number;
   trackId: number;
   artistName?: string;
-  collectionName: Name;
+  collectionName: string;
   trackName: string;
-  collectionCensoredName?: Name;
-  trackCensoredName?: Name;
+  collectionCensoredName?: string;
+  trackCensoredName?: string;
   artistViewUrl: string;
   collectionViewUrl: string;
   feedUrl: string;
@@ -29,61 +29,29 @@ export interface Result {
   trackExplicitness?: string;
   trackCount?: number;
   trackTimeMillis: number;
-  country: Country;
+  country: string;
   currency?: string;
-  primaryGenreName?: PrimaryGenreNameEnum;
+  primaryGenreName?: string;
   artworkUrl600: string;
   genreIds?: string[];
   genres: GenreElement[];
   episodeUrl?: string;
-  closedCaptioning?: ClosedCaptioning;
+  closedCaptioning?: string;
   artistIds?: number[];
   episodeGuid?: string;
   shortDescription?: string;
   previewUrl?: string;
   artworkUrl160?: string;
-  episodeFileExtension?: EpisodeFileExtension;
-  episodeContentType?: EpisodeContentType;
+  episodeFileExtension?: string;
+  episodeContentType?: string;
   description?: string;
-}
-
-export enum ClosedCaptioning {
-  None = "none",
-}
-
-export enum Name {
-  SwitchedOnPop = "Switched on Pop",
-}
-
-export enum Country {
-  Usa = "USA",
-}
-
-export enum EpisodeContentType {
-  Audio = "audio",
-}
-
-export enum EpisodeFileExtension {
-  Mp3 = "mp3",
+  contentAdvisoryRating?: string;
 }
 
 export type GenreElement = GenreClass | string;
 
 export interface GenreClass {
-  name: PrimaryGenreNameEnum;
+  name: string;
   id: string;
 }
 
-export enum PrimaryGenreNameEnum {
-  MusicCommentary = "Music Commentary",
-}
-
-export enum Kind {
-  Podcast = "podcast",
-  PodcastEpisode = "podcast-episode",
-}
-
-export enum WrapperType {
-  PodcastEpisode = "podcastEpisode",
-  Track = "track",
-}

@@ -25,9 +25,6 @@ export const Navbar = ({ isloading }: NavbarProps) => {
             </Link>
           </Typography>
           {isloading ? <Loading /> : null}
-          <Link hidden={pathname === "/"} href="/">
-            home
-          </Link>
         </Toolbar>
       </AppBar>
     </Box>

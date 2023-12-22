@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap');
+
 /*GLOBAL*/
+:root {
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+}
 
 /*PODCAST PAGE*/
 .podcast {
@@ -60,14 +66,14 @@
   content: "";
   width: 200%;
   background:
-    linear-gradient(90deg, #ff1818 50%, #0000 0),
+    linear-gradient(90deg, #1871ff 50%, #0000 0),
     conic-gradient(from -90deg at var(--s) calc(0.353*var(--s)),
       #fff 135deg, #666 0 270deg, #aaa 0);
   background-blend-mode: multiply;
   --_m:
     linear-gradient(to bottom right,
-      #0000 calc(0.25*var(--s)), #000 0 calc(100% - calc(0.25*var(--s)) - 1.414*var(--g)), #0000 0),
-    conic-gradient(from -90deg at right var(--g) bottom var(--g), #000 90deg, #0000 0);
+      #0000 calc(0.25*var(--s)), #110032 0 calc(100% - calc(0.25*var(--s)) - 1.414*var(--g)), #0000 0),
+    conic-gradient(from -90deg at right var(--g) bottom var(--g), #05001e 90deg, #0000 0);
   -webkit-mask: var(--_m);
   mask: var(--_m);
   background-size: calc(100%/3) 100%, calc(100%/6) 100%;
