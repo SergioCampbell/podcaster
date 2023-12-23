@@ -39,6 +39,7 @@ const fetchPodcastDetail = async (podcastId: string) => {
   try {
     const res = await fetch(routes.getPodcastDetail(podcastId));
     const data: PodcastDetail = await res.json();
+    console.log("🚀 ~ file: serviceFetcher.ts:42 ~ fetchPodcastDetail ~ data:", data)
     return data;
   } catch (error) {
     console.error("Error fetching podcast detail:", error);

@@ -26,7 +26,7 @@ export const PodcastCards = ({ allPodcast, loading }: Props) => {
   return (
     <>
       {allPodcast.map((podcast) => (
-        <Box key={podcast.id?.attributes?.["im:id"]}>
+        <Box key={podcast.id?.attributes?.["im:id"]} mt={3}>
           <Link
             style={{ color: "white", textDecoration: "none" }}
             href="/podcast/[podcastid]"
@@ -42,7 +42,7 @@ export const PodcastCards = ({ allPodcast, loading }: Props) => {
                 maxHeight: 300,
               }}
             >
-              <CardContent>
+              <CardContent sx={{ minWidth: 300 }}>
                 {loading ? (
                   <Skeleton
                     animation="wave"
@@ -75,9 +75,9 @@ export const PodcastCards = ({ allPodcast, loading }: Props) => {
                   <>
                     <Tooltip title={podcast.title?.label}>
                       <Typography
-                        gutterBottom
-                        variant="h5"
-                        component="h5"
+                        variant="h6"
+                        component="h6"
+                        mr={window.screen.width < 400 ? 0 : 4}
                         sx={{
                           overflow: "hidden",
                           textOverflow: "ellipsis",
@@ -88,7 +88,16 @@ export const PodcastCards = ({ allPodcast, loading }: Props) => {
                         {podcast.title?.label}
                       </Typography>
                     </Tooltip>
-                    <Typography gutterBottom sx={{ fontStyle: "italic" }}>
+                    <Typography
+                      mr={window.screen.width < 400 ? 0 : 4}
+                      sx={{
+                        fontStyle: "italic",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        whiteSpace: "nowrap",
+                        maxLines: 2,
+                      }}
+                    >
                       {podcast["im:artist"]?.label}
                     </Typography>
                   </>

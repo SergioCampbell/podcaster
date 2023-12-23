@@ -13,16 +13,19 @@ export default function PodcastLayout({ children }: { children: ReactNode }) {
   const { podcastId } = useParams();
   const { data, isFetching } = usePodcastForSidebar(String(podcastId));
   const [podcastSidebar, setPodcastSidebar] = useState<Podcasts>();
+
+  const myWidht = window.innerWidth;
+
   useEffect(() => {
     if (data && "im:name" in data) {
       setPodcastSidebar(data);
     }
-  }, [data]);
+  }, [data, myWidht]);
   return (
     <section>
       <Navbar isloading={isFetching} />
       <Suspense fallback={<Loading />}>
-        <Stack direction="row">
+        <Stack direction={myWidht < 800 ? "column" : "row"}>
           <Sidebar podcast={podcastSidebar} />
           {children}
         </Stack>

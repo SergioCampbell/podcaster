@@ -28,7 +28,7 @@ export const Filter = ({
       component="search"
       display={myWidth < 400 ? "contents" : "flex"}
       direction="row-reverse"
-      maxWidth={myWidth < 400 ? 100 : "94.5%"}
+      maxWidth={myWidth < 400 ? "100%" : "98.5%"}
       sx={{ mt: 3 }}
     >
       <Box component="form" name="searchPodcast" mt={3}>

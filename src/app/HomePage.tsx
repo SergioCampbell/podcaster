@@ -46,7 +46,6 @@ export const HomePage = () => {
         />
       </Suspense>
       <Suspense fallback={<Loading />}>
-        <Container maxWidth="xl" sx={{ mt: 5 }}>
           <Stack
             direction="row"
             alignItems={"stretch"}
@@ -65,7 +64,6 @@ export const HomePage = () => {
               </Stack>
             )}
           </Stack>
-        </Container>
       </Suspense>
     </main>
   );
