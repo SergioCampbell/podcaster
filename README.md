@@ -121,6 +121,20 @@ usePodcast hook
    const { data, isFetching, isLoading } = usePodcast(100); // this number is variable
 ````
 
+### Dev mode
+
+if you want to made some changes in dev evironment, go to ```next.config.js``` and add the follow pathern:
+
+```
+//next.config.js
+    ...
+        {
+          key: "Access-Control-Allow-Origin",
+          value: isLocal ? localEnv : prodEnv,
+        },
+    ...
+```
+
 ## Testing
 
 This project uses [Jest](https://jestjs.io) and to run the test just excecute the follow script:

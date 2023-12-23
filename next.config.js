@@ -5,7 +5,7 @@ const localEnv = "http://localhost:3000";
 const prodEnv = "https://podcaster-delta.vercel.app";
 
 const nextConfig = {
-  headers() {
+  async headers() {
     return [
       {
         source: "/",
@@ -13,7 +13,7 @@ const nextConfig = {
           { key: "Access-Control-Allow-Credentials", value: "true" },
           {
             key: "Access-Control-Allow-Origin",
-            value: "*",
+            value: isLocal ? localEnv : prodEnv,
           },
           {
             key: "Access-Control-Allow-Methods",
