@@ -7,6 +7,8 @@ hear their content.
 
 Navigate filtering by podcast title or artist name, select the card and check it content.
 
+DEMO HERE: [https://podcaster-delta.vercel.app](https://podcaster-delta.vercel.app)
+
 ## Architecture
 
 This project uses a layered architecture, you would have separate layers for presentation (UI components), business logic (services and hooks), and data access (API calls and database operations).
