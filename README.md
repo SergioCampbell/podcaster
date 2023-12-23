@@ -1,9 +1,13 @@
+![preview](https://i.ibb.co/W2svNhV/podcaster.png)
+
 # Podcaster
 
 Podcaster is a web application where you can search for the top 100 iTunes podcast artists and
 hear their content.
 
 Navigate filtering by podcast title or artist name, select the card and check it content.
+
+DEMO HERE: [https://podcaster-delta.vercel.app](https://podcaster-delta.vercel.app)
 
 ## Architecture
 
