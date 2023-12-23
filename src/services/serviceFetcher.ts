@@ -20,7 +20,8 @@ const fetchPodcasts = async (limit: number) => {
     if (!res.ok) {
       throw new Error("Network response was not ok");
     }
-    const data = await res.json();
+    const checker = await res.json();
+    const data = JSON.parse(checker.contents);
     const results: AllPodcasts = data.feed.entry;
     return results;
   } catch (error) {
@@ -38,8 +39,9 @@ const fetchPodcasts = async (limit: number) => {
 const fetchPodcastDetail = async (podcastId: string) => {
   try {
     const res = await fetch(routes.getPodcastDetail(podcastId));
-    const data: PodcastDetail = await res.json();
-    return data;
+    const data = await res.json();
+    const results: PodcastDetail = JSON.parse(data.contents);
+    return results;
   } catch (error) {
     console.error("Error fetching podcast detail:", error);
     return [];
@@ -60,7 +62,8 @@ const fetchPodcastMedia = async (params: PropParams) => {
     if (!res.ok) {
       throw new Error("Network response was not ok");
     }
-    const fromPodcast: PodcastDetail = await res.json();
+    const data = await res.json();
+    const fromPodcast: PodcastDetail = JSON.parse(data.contents);
     const podcastData: Result[] = fromPodcast.results;
 
     let algo: any = {};
@@ -87,7 +90,8 @@ const fetchPodcastsSidebar = async (podcastId: string) => {
     if (!res.ok) {
       throw new Error("Network response was not ok");
     }
-    const data = await res.json();
+    const checker = await res.json();
+    const data = JSON.parse(checker.contents);
     const result: Podcasts[] = data.feed.entry;
     let algo: Podcasts = {};
     for (algo of result) {

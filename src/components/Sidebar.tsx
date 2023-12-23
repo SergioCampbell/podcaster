@@ -1,5 +1,6 @@
 import { Podcasts } from "@/interface/podcasts";
 import { Divider, Stack, Typography } from "@mui/material";
+import Linkify from "linkify-react";
 import Image from "next/image";
 import Link from "next/link";
 import ReactDOM from "react-dom";
@@ -59,7 +60,9 @@ export const Sidebar = ({ podcast }: SidebarProps) => {
       </summary>
       <Stack display={"block"} className="multiline-ellipsis">
         <Typography fontStyle={"italic"} mt={1}>
-          {podcast?.summary?.label ?? "No Description"}
+          <Linkify as="p">
+            {podcast?.summary?.label ?? "No Description"}
+          </Linkify>
         </Typography>
       </Stack>
     </Stack>

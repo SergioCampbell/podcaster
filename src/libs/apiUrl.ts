@@ -2,9 +2,15 @@ const BASE_URL = "https://itunes.apple.com";
 
 export const routes = {
   getPodcasts: (limit: number) =>
-    `${BASE_URL}/us/rss/toppodcasts/limit=${limit}/json`,
+    `https://api.allorigins.win/get?url=${encodeURIComponent(
+      `${BASE_URL}/us/rss/toppodcasts/limit=${limit}/json`
+    )}`,
   getPodcastDetail: (podcastId: string) =>
-    `${BASE_URL}/lookup?id=${podcastId}&media=podcast&entity=podcastEpisode&limit=20`,
+    `https://api.allorigins.win/get?url=${encodeURIComponent(
+      `${BASE_URL}/lookup?id=${podcastId}&media=podcast&entity=podcastEpisode&limit=20`
+    )}`,
   getPodcastMedia: (episodeId: string) =>
-    `${BASE_URL}/lookup?id=${episodeId}&media=podcast&entity=podcastEpisode`,
+    `https://api.allorigins.win/get?url=${encodeURIComponent(
+      `${BASE_URL}/lookup?id=${episodeId}&media=podcast&entity=podcastEpisode`
+    )}`,
 };

@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-const localEnv = "http://localhost:3000";
-const prodEnv = "https://podcaster-delta.vercel.app";
-
 const nextConfig = {
   async headers() {
     return [
@@ -11,7 +8,7 @@ const nextConfig = {
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: prodEnv,
+            value: "*",
           },
           {
             key: "Access-Control-Allow-Methods",
