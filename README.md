@@ -130,7 +130,7 @@ if you want to made some changes in dev evironment, go to ```next.config.js``` a
     ...
         {
           key: "Access-Control-Allow-Origin",
-          value: isLocal ? localEnv : prodEnv,
+          value: localEnv, // change this
         },
     ...
 ```

@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
-const isLocal = process.env.NODE_ENV === "development";
-const isProd = process.env.NODE_ENV === "production";
+
 const localEnv = "http://localhost:3000";
 const prodEnv = "https://podcaster-delta.vercel.app";
 
@@ -10,10 +9,9 @@ const nextConfig = {
       {
         source: "/",
         headers: [
-          { key: "Access-Control-Allow-Credentials", value: "true" },
           {
             key: "Access-Control-Allow-Origin",
-            value: isLocal ? localEnv : prodEnv,
+            value: prodEnv,
           },
           {
             key: "Access-Control-Allow-Methods",
