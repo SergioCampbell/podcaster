@@ -1,4 +1,4 @@
-![preview](https://i.ibb.co/W2svNhV/podcaster.png)
+![image](https://github.com/SergioCampbell/podcaster/assets/51247757/7d0936df-63e3-4a4d-8408-2d30cfccb245)
 
 # Podcaster
 
@@ -25,6 +25,7 @@ List the tools and technologies used in your project:
 - Jest
 - linkify-react
 - Eslint
+- AllOrigins
 
 ## Project Structure
 
@@ -113,27 +114,11 @@ To edit some values and add "dynamicity" go to the this path:
 └── HomePage.tsx
 ```
 
-and in the
-
-usePodcast hook
+and in the ``usePodcast()`` hook
 
  ````
-   const { data, isFetching, isLoading } = usePodcast(100); // this number is variable
+   const { data, isFetching, isLoading } = usePodcast(100); // ⬅️ You can change this number
 ````
-
-### Dev mode
-
-if you want to made some changes in dev evironment, go to ```next.config.js``` and add the follow pathern:
-
-```
-//next.config.js
-    ...
-        {
-          key: "Access-Control-Allow-Origin",
-          value: localEnv, // change this
-        },
-    ...
-```
 
 ## Testing
 
